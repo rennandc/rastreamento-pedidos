@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreamento de Pedidos</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Rastreamento de Pedidos</h1>
+
+    <p>Consulte pelo número do pedido ou diretamente por CNPJ e NF.</p>
+
+    <div class="tabs">
+        <button type="button" onclick="mostrarFormulario('pedido')">
+            Consultar por Pedido
+        </button>
+
+        <button type="button" onclick="mostrarFormulario('manual')">
+            Consultar por CNPJ + NF
+        </button>
+    </div>
+
+    <!-- CONSULTA POR PEDIDO -->
+
+    <form method="POST" id="form-pedido">
+
+        <input type="hidden" name="tipo_consulta" value="pedido">
+
+        <label>Número do pedido</label>
+
+        <input
+            type="text"
+            name="pedido"
+            placeholder="Ex: 12345"
+        >
+
+        <button type="submit">
+            Consultar
+        </button>
+
+    </form>
+
+    <!-- CONSULTA MANUAL -->
+
+    <form method="POST" id="form-manual" class="hidden">
+
+        <input type="hidden" name="tipo_consulta" value="manual">
+
+        <label>CNPJ</label>
+
+        <input
+            type="text"
+            name="cnpj"
+            placeholder="Ex: 32681371006456"
+        >
+
+        <label>Número da NF</label>
+
+        <input
+            type="text"
+            name="nf"
+            placeholder="Ex: 92134"
+        >
+
+        <button type="submit">
+            Consultar
+        </button>
+
+    </form>
+
+    {% if mensagem %}
+        <div class="erro">
+            {{ mensagem }}
+        </div>
+    {% endif %}
+
+    {% if resultado %}
+
+        <div class="card">
+
+            <h2>Resultado do rastreamento</h2>
+
+            <p>
+                <strong>Pedido:</strong>
+                {{ resultado.pedido }}
+            </p>
+
+            <p>
+                <strong>Cliente:</strong>
+                {{ resultado.cliente }}
+            </p>
+
+            <p>
+                <strong>NF:</strong>
+                {{ resultado.nf }}
+            </p>
+
+            <p>
+                <strong>Unidade:</strong>
+                {{ resultado.unidade }}
+            </p>
+
+            <p>
+                <strong>Data/Hora:</strong>
+                {{ resultado.data_hora }}
+            </p>
+
+            <div class="status">
+    {{ resultado.situacao }}
+</div>
+
+            <p>
+                <strong>Detalhes:</strong>
+                {{ resultado.detalhes }}
+            </p>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+<script>
+
+function mostrarFormulario(tipo) {
+
+    const formPedido = document.getElementById("form-pedido");
+    const formManual = document.getElementById("form-manual");
+
+    if (tipo === "pedido") {
+
+        formPedido.classList.remove("hidden");
+        formManual.classList.add("hidden");
+
+    } else {
+
+        formPedido.classList.add("hidden");
+        formManual.classList.remove("hidden");
+
+    }
+}
+
+</script>
+
+</body>
+</html>

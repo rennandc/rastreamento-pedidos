@@ -1,0 +1,266 @@
+/* ===== RESET ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b,
+            #0f172a
+        );
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+/* ===== CONTAINER ===== */
+
+.container {
+    width: 100%;
+    max-width: 950px;
+
+    background: rgba(255,255,255,0.98);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.35);
+}
+
+/* ===== TITULO ===== */
+
+h1 {
+    font-size: 42px;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.container p:first-of-type {
+    color: #475569;
+    margin-bottom: 25px;
+}
+
+/* ===== BOTÕES DE SELEÇÃO ===== */
+
+.tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.tabs button {
+    flex: 1;
+
+    border: none;
+
+    background: #e2e8f0;
+
+    color: #0f172a;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.tabs button:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ===== FORMULÁRIOS ===== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: 600;
+    color: #334155;
+}
+
+input {
+    padding: 15px;
+
+    border: 2px solid #cbd5e1;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,0.15);
+}
+
+button[type="submit"] {
+
+    margin-top: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: white;
+
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,0.35);
+}
+
+/* ===== RESULTADO ===== */
+
+.card {
+
+    margin-top: 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    border-left: 6px solid #22c55e;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+
+    color: #0f172a;
+
+    margin-bottom: 20px;
+
+    font-size: 30px;
+}
+
+.card p {
+
+    margin-bottom: 14px;
+
+    font-size: 18px;
+
+    color: #334155;
+}
+
+.card strong {
+
+    color: #0f172a;
+}
+
+/* ===== STATUS ===== */
+
+.status {
+
+    margin-top: 20px;
+
+    background: #dcfce7;
+
+    color: #166534;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+/* ===== ERROS ===== */
+
+.erro {
+
+    margin-top: 20px;
+
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+}
+
+/* ===== FORM ESCONDIDO ===== */
+
+.hidden {
+    display: none;
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+}

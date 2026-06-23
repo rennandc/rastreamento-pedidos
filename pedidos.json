@@ -1,0 +1,18 @@
+[
+  {
+    "numero": "12345",
+    "cliente": "Cliente A",
+    "transportadora": "Transportadora XPTO",
+    "status": "Em trânsito",
+    "data_envio": "20/06/2026",
+    "previsao_entrega": "25/06/2026"
+  },
+  {
+    "numero": "67890",
+    "cliente": "Cliente B",
+    "transportadora": "Transportadora Brasil",
+    "status": "Entregue",
+    "data_envio": "18/06/2026",
+    "previsao_entrega": "22/06/2026"
+  }
+]
